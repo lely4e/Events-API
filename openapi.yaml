@@ -769,4 +769,3 @@ components:
           type: string
           description: Alternative error message format (used by Flask-JWT-Extended)
           example: "Missing Authorization Header"
-
