@@ -23,3 +23,16 @@ jobs:
             docker run -d -p 5005:5005 --name events-api-container events-api:latest
             sleep 5
             curl http://localhost:5005/api/health || exit 1
+
+        - name: Setup Python
+          uses: actions/setup-python@v3
+          with:
+            python-version: 3.11
+
+        - name: Install dependencies
+          run: |
+            pip install -r requirements.txt
+
+        - name: Run Unit test
+          run: |
+            pytest -v
