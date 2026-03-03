@@ -14,6 +14,12 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v4
 
+        - name: Build docker image
+          run: |
+            docker build -t events-api:latest .
 
-
-
+        - name: Run Container
+          run: |
+            docker run -d -p 5005:5005 --name events-api-container events-api:latest
+            sleep 5
+            curl http://localhost:5005/api/health || exit 1
