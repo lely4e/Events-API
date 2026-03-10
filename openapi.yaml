@@ -12,7 +12,7 @@ info:
 servers:
   - url: http://localhost:5005
     description: Local development server
-  - url: https://api.example.com
+  - url: ${RENDER_BASE_URL}
     description: Production server
 
 tags:
