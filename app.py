@@ -7,7 +7,6 @@ from models import db
 from routes.auth import auth_bp
 from routes.events import events_bp
 from routes.rsvps import rsvps_bp
-import yaml
 import os
 
 def create_app():
